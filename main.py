@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, timezone
+import slackweb
 
 # 1: mon, 2: tue, 3: wed, 4:thu, 5:fri
 groupA = {"1": "ビストロカルロス(ビーフステーキライス、ハーブチキンライス)", "2": "Comida Latina(タコライス)", "3": "PINOS(グリルチキン丼、ビーフステーキ丼)", "4": "てふてふ(ムーデン、てふてふ)", "5": "グリーンスペイン(パエリアランチBOX)"}
@@ -30,15 +31,18 @@ this_week_number = weeknumber[1] % 5
 this_day_number = str(weeknumber[2])
 
 if this_day_number == "6" or this_day_number == "7":
-  print("お休み")
+  text = "お休み"
 else:
   if this_week_number == 0:
-    print(place1 + week0[1][this_day_number] + "、" + place2 + week0[2][this_day_number] + "、" + place3 + week0[3][this_day_number] + "、" + place4 + week0[4][this_day_number] + "、" + place5 + week0[5][this_day_number])
+    text = place1 + week0[1][this_day_number] + "、" + place2 + week0[2][this_day_number] + "、" + place3 + week0[3][this_day_number] + "、" + place4 + week0[4][this_day_number] + "、" + place5 + week0[5][this_day_number]
   elif this_week_number == 1:
-    print(place1 + week1[1][this_day_number] + "、" + place2 + week1[2][this_day_number] + "、" + place3 + week1[3][this_day_number] + "、" + place4 + week1[4][this_day_number] + "、" + place5 + week1[5][this_day_number])
+    text = place1 + week1[1][this_day_number] + "、" + place2 + week1[2][this_day_number] + "、" + place3 + week1[3][this_day_number] + "、" + place4 + week1[4][this_day_number] + "、" + place5 + week1[5][this_day_number]
   elif this_week_number == 2:
-    print(place1 + week2[1][this_day_number] + "、" + place2 + week2[2][this_day_number] + "、" + place3 + week2[3][this_day_number] + "、" + place4 + week2[4][this_day_number] + "、" + place5 + week2[5][this_day_number])
+    text = place1 + week2[1][this_day_number] + "、" + place2 + week2[2][this_day_number] + "、" + place3 + week2[3][this_day_number] + "、" + place4 + week2[4][this_day_number] + "、" + place5 + week2[5][this_day_number]
   elif this_week_number == 3:
-    print(place1 + week3[1][this_day_number] + "、" + place2 + week3[2][this_day_number] + "、" + place3 + week3[3][this_day_number] + "、" + place4 + week3[4][this_day_number] + "、" + place5 + week3[5][this_day_number])
+    text = place1 + week3[1][this_day_number] + "、" + place2 + week3[2][this_day_number] + "、" + place3 + week3[3][this_day_number] + "、" + place4 + week3[4][this_day_number] + "、" + place5 + week3[5][this_day_number]
   elif this_week_number == 4:
-    print(place1 + week4[1][this_day_number] + "、" + place2 + week4[2][this_day_number] + "、" + place3 + week4[3][this_day_number] + "、" + place4 + week4[4][this_day_number] + "、" + place5 + week4[5][this_day_number])
+    text = place1 + week4[1][this_day_number] + "、" + place2 + week4[2][this_day_number] + "、" + place3 + week4[3][this_day_number] + "、" + place4 + week4[4][this_day_number] + "、" + place5 + week4[5][this_day_number]
+
+
+slack.notify(text=text)
