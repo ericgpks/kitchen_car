@@ -34,15 +34,16 @@ if this_day_number == "6" or this_day_number == "7":
   text = "お休み"
 else:
   if this_week_number == 0:
-    text = place1 + week0[1][this_day_number] + "、" + place2 + week0[2][this_day_number] + "、" + place3 + week0[3][this_day_number] + "、" + place4 + week0[4][this_day_number] + "、" + place5 + week0[5][this_day_number]
+    group = week0
   elif this_week_number == 1:
-    text = place1 + week1[1][this_day_number] + "、" + place2 + week1[2][this_day_number] + "、" + place3 + week1[3][this_day_number] + "、" + place4 + week1[4][this_day_number] + "、" + place5 + week1[5][this_day_number]
+    group = week1
   elif this_week_number == 2:
-    text = place1 + week2[1][this_day_number] + "、" + place2 + week2[2][this_day_number] + "、" + place3 + week2[3][this_day_number] + "、" + place4 + week2[4][this_day_number] + "、" + place5 + week2[5][this_day_number]
+    group = week2
   elif this_week_number == 3:
-    text = place1 + week3[1][this_day_number] + "、" + place2 + week3[2][this_day_number] + "、" + place3 + week3[3][this_day_number] + "、" + place4 + week3[4][this_day_number] + "、" + place5 + week3[5][this_day_number]
+    group = week3
   elif this_week_number == 4:
-    text = place1 + week4[1][this_day_number] + "、" + place2 + week4[2][this_day_number] + "、" + place3 + week4[3][this_day_number] + "、" + place4 + week4[4][this_day_number] + "、" + place5 + week4[5][this_day_number]
+    group = week4
 
+  text = place1 + group[1][this_day_number] + "\n" + place2 + group[2][this_day_number] + "\n" + place3 + group[3][this_day_number] + "\n" + place4 + group[4][this_day_number] + "\n" + place5 + group[5][this_day_number]
 
-slack.notify(text=text)
+slack.notify(text="今日のお昼〜〜〜〜\n" + text)
