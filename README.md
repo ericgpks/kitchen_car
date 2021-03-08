@@ -2,5 +2,6 @@
 
 表に合わせて、本日のキッチンカー情報を流します。
 
-現在はローカル実行でwebhook経由でポストしています。
-今後は、Lambdaに関数を載せて、CloudWatchから定時に叩くようにします。
+Lambdaに関数を載せて、EventBrigdeから定時に叩くようにしています。
+
+GitHubとの連携ができていないので、CodeDeploy?CodePipeline?あたりを使って連携したいと思っています。
