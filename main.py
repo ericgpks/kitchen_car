@@ -28,9 +28,9 @@ today = datetime.now(JST)
 weeknumber = today.isocalendar()
 
 this_week_number = weeknumber[1] % 5
-this_day_number = str(weeknumber[2])
+this_day_number = weeknumber[2]
 
-if this_day_number == "6" or this_day_number == "7":
+if this_day_number == 6 or this_day_number == 7:
   text = "お休み"
 else:
   if this_week_number == 0:
