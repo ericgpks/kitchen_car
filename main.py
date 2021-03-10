@@ -10,6 +10,7 @@ groupC = ["Caffe Latte(イタリアご飯4種盛り)", "Dudes(テリヤキチキ
 groupD = ["Mr.Chicken(シンガポールチキンライス)", "TOKYO PAELLA(週替りパエリア)", "MOCHIKO chicken factory(モチコチキン)", "デリキムチ(プルコギ、タッカルビ、カルビクッパ)", "NAOCAFE(スパム丼、男前ハワイ丼)"]
 groupE = ["火の鳥食堂(ハヤシライス)", "GRILL TOKYO(ローストビーフ、グリルチキン)", "カリフォルニアカフェ フラワーズ(ケイジャンチキン、BBQライス)", "CHERIE(ハイチ料理)", "＋Spice(インドカレー(ナン/ライス))"]
 
+# 2021年のISO暦ではこの順番になっている
 weeks = [
   [groupD, groupE, groupA, groupB, groupC],
   [groupE, groupA, groupB, groupC, groupD],
